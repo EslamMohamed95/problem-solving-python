@@ -7,10 +7,10 @@ def depth_first_iterative(g, start):
             stack.append(neighbor)
 
 
-def depth_first_recursive(g, current):
+def depth_first_recursive(current):
     print(current)
     for neighbor in graph[current]:
-        depth_first_recursive(graph, neighbor)
+        depth_first_recursive(neighbor)
 
 
 graph = {
@@ -22,4 +22,4 @@ graph = {
     "f": []
 }
 depth_first_iterative(graph, "a")
-depth_first_recursive(graph, "a")
+depth_first_recursive("a")

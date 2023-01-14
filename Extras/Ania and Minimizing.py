@@ -4,12 +4,10 @@ n, k = map(int, input().strip().split())
 S = list(input())
 chrs = 0
 
-if len(S) == 1:
-
-    if k != 0:
-        S = '0'
-        print(S)
-        sys.exit(0)
+if len(S) == 1 and k != 0:
+    S = '0'
+    print(S)
+    sys.exit(0)
 
 if k == n and S[0] == '1' and k != 1:
     k = k - 1

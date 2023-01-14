@@ -13,16 +13,16 @@ def dfs(i, j):
     dfs(i, j + 1)
 
 
+import itertools
 for c in range(n):
     g = int(input())
-    grid = [list(input()) for i in range(g)]
+    grid = [list(input()) for _ in range(g)]
     print()
     visited = [[None] * g] * g
     ships = 0
-    for i in range(g):
-        for j in range(g):
-            cell = grid[i][j]
-            if not visited[i][j] and grid[i][j] == 'x':
-                ships += 1
-                dfs(i, j)
-    print("Case {}: {}".format(c + 1, ships))
+    for i, j in itertools.product(range(g), range(g)):
+        cell = grid[i][j]
+        if not visited[i][j] and grid[i][j] == 'x':
+            ships += 1
+            dfs(i, j)
+    print(f"Case {c + 1}: {ships}")
